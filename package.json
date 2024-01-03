@@ -1,8 +1,10 @@
 {
-	"name": "wpm-cli",
+	"name": "@nrawrx3/wpm",
 	"version": "0.0.0",
 	"license": "MIT",
-	"bin": "dist/wpn-cli.js",
+	"bin": {
+		"wpm": "dist/wpm.js"
+	},
 	"type": "module",
 	"engines": {
 		"node": ">=16"

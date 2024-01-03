@@ -1,4 +1,4 @@
-# wpm-cli
+# wpm
 
 A minimal typing test TUI app. Point to a text file and start typing!
 
@@ -6,16 +6,16 @@ A minimal typing test TUI app. Point to a text file and start typing!
 
 # Usage
 
-Install with `npm install -g wpm-cli`.
+Install with `npm install -g @nrawrx3/wpm`.
 
 ```
 Usage
-	  $ wpm-cli
+	  $ wpm
 
 	Options
 		--inputfile, -i  The input file to read from
 		--width, -w      The width of the box to render (default 80)
 
 	Examples
-	  $ wpm-cli --inputfile=input.txt --width=80
+	  $ wpm --inputfile=input.txt --width=80
 ```
