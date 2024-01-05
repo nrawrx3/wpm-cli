@@ -5,6 +5,7 @@ import meow from 'meow';
 import App from './app.js';
 import {readFileSync} from 'fs';
 import unidecode from 'unidecode';
+import natural from 'natural';
 
 const cli = meow(
 	`
@@ -36,11 +37,11 @@ const cli = meow(
 );
 
 function tokenize(text: string): string[] {
+	const tokenizer = new natural.WordTokenizer();
+
 	text = unidecode(text.normalize());
 	text = text.replace(/\n/g, ' ');
-	// Split on whitespace, tabs, and newlines
-	const words = text.split(/\s+/);
-	return words;
+	return tokenizer.tokenize(text)!!;
 }
 
 // Open the file and read the text, convert to a list of characters.
