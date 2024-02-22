@@ -41,7 +41,24 @@ function tokenize(text: string): string[] {
 
 	text = unidecode(text.normalize());
 	text = text.replace(/\n/g, ' ');
+	text = splitLongWords(text.split(' ')).join(' ');
 	return tokenizer.tokenize(text)!!;
+}
+
+// Split long workds
+function splitLongWords(words: string[]): string[] {
+	const newWords: string[] = [];
+	for (let word of words) {
+		if (word.length > 10) {
+			const split = word.match(/.{1,10}/g);
+			if (split) {
+				newWords.push(...split);
+				continue;
+			}
+		}
+		newWords.push(word);
+	}
+	return newWords;
 }
 
 // Open the file and read the text, convert to a list of characters.
